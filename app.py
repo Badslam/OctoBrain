@@ -20,14 +20,14 @@ from langchain.agents.agent_toolkits import (
 
 # Set APIkey for OpenAI Service
 # Can sub this out for other LLM providers
-os.environ['OPENAI_API_KEY'] = 'youropenaiapikeyhere'
+os.environ['OPENAI_API_KEY'] = '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'
 
 # Create instance of OpenAI LLM
 llm = OpenAI(temperature=0.1, verbose=True)
 embeddings = OpenAIEmbeddings()
 
 # Create and load PDF Loader
-loader = PyPDFLoader('annualreport.pdf')
+loader = PyPDFLoader('emanual_dummy.pdf')
 # Split pages from pdf 
 pages = loader.load_and_split()
 # Load documents into vector database aka ChromaDB
@@ -48,7 +48,7 @@ agent_executor = create_vectorstore_agent(
     toolkit=toolkit,
     verbose=True
 )
-st.title('🦜🔗 GPT Investment Banker')
+st.title('🐙 OctoBrain')
 # Create a text input box for the user
 prompt = st.text_input('Input your prompt here')
 
